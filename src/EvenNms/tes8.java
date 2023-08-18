@@ -14,7 +14,7 @@ public class tes8 {
     //값을 char배열로 만들어 맨앞요소로 분기문으로 나누고
     //아스키 코드를 이용해 숫자로 변환해주세요.
     public int solution(String s) {
-        int answer = 0;
+        int answer = Integer.parseInt(s);
         return answer;
     }
 }

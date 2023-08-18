@@ -8,6 +8,9 @@ public class tes4 {
     // 중복된 값이 있을때 리턴 해주세요.
     public int solution(int n) {
         int answer = 0;
+        for (int i = 1; i <= n; i++) {
+            answer += (n%i==0)?i:0;
+        }
         return answer;
     }
 }
