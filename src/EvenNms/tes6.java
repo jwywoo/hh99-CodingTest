@@ -8,7 +8,10 @@ public class tes6 {
     // n 번 반복문을 실행하고
     // 반복문의 인덱스와 x 값을 곱해 리턴해주세요.
     public long[] solution(int x, int n) {
-        long[] answer = {};
+        long[] answer = new long[n];
+        for (int i = 1; i <= n; i++) {
+            answer[i-1] = i*(long) x;
+        }
         return answer;
     }
 }

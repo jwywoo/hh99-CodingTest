@@ -1,4 +1,8 @@
 package EvenNms;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class TesTwo {
     //배열의 평균값을 리턴하는 함수 , arr는 1이상 100이하 , arr 원소는 +- 10000이하
 
@@ -6,10 +10,11 @@ public class TesTwo {
     // arr 갯수로 나눠 리턴 해주세요.
     static double solution(int[] arr) {
         double answer = 0;
-        return answer;
+        for (int i = 0; i < arr.length; i++) answer += (double) arr[i];
+        return answer/ arr.length;
     }
 
     public static void main(String[] args) {
-
+        ;
     }
 }
