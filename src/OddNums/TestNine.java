@@ -8,11 +8,12 @@ import java.util.*;
 //      0일경우에는 answer는 제곱근+1의 제곱
 public class TestNine {
     static long solution(long n) {
-        long answer = 0;
+        int i = (int)Math.sqrt(n);
 
-        return answer;
+        return  (i == Math.sqrt(n))? ((i+1) * (i+1)) : -1;
     }
-
+    // pow는 안쓴건 비용이 좀더 커서?
+    // 제곱근을 1개로 줄이면 될거 같아요.
     public static void main(String[] args) {
     }
 }

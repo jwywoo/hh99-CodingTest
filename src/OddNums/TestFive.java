@@ -8,9 +8,26 @@ package OddNums;
 //      만약 아니라면 x만 1을 빼준다.
 public class TestFive {
     static int solution(int n) {
-        int answer = 0;
-        return answer;
+        int x = n;
+        int anser = -1;
+
+        while (x > 0)
+        {
+            if (anser > 0)
+            {
+                anser = (n % x == 1)? x : anser;
+            }else
+            {
+                anser = x;
+            }
+
+            x--;
+        }
+
+        return  anser;
     }
+
+    //전 for으로 짧게 했어요
 
     public static void main(String[] args) {
 

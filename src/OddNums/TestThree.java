@@ -8,11 +8,15 @@ package OddNums;
 // 2. 그리고 변환된 값을 순회를 하면서 자리수를 answer에 더한다.
 public class TestThree {
     static int solution(int n) {
-        int answer = 0;
-
-        return answer;
+        var temp = String.valueOf(n).toCharArray();
+        int anser = 0;
+        for (var v : temp)
+        {
+            anser += Integer.parseInt(String.valueOf(v));
+        }
+        return anser;
     }
-
+    // n % 10 으로 일자리수를 구하는게 더 빠르네요.
     public static void main(String[] args) {
 
     }
