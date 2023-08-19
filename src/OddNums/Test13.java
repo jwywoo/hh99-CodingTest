@@ -19,8 +19,26 @@ public class Test13 {
     //메인에선 리턴시킬 변수 -1로 초기화 하고
     // 반복문에 500회 돌려서
     // 메서드의 결과값에따라 리턴 시켜주세요.
-    public int solution(int num) {
+
+    public static long calculator(long num) {
+        if (num%2 == 0) return num/2;
+        else return num*3+1;
+        // return (num%2 == 0)?num/2:(num*3)+1;
+    }
+    public static int solution(int num) {
         int answer = 0;
+        long temp = (long) num;
+        int result = 0;
+        while (temp != 1) {
+            if (result == 500) break;
+            temp = calculator(temp);
+            result++;
+        }
+        answer = (result < 500)?result:-1;
         return answer;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(solution(6));
     }
 }

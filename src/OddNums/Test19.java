@@ -1,5 +1,8 @@
 package OddNums;
 
+import java.util.*;
+
+
 public class Test19 {
     /*제일 작은 수 제거하기
     정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수,
@@ -13,8 +16,27 @@ public class Test19 {
     //tempIndex가 -1 이면 비교하는값을 넣고 , 인덱스르 저장합니다.
     //작은수일때 임시변수에 넣고 , 인덱스를 저장하고
     //반복문 나왔을때 찾은 인덱스를 빼고 리턴합니다.
-    public int[] solution(int[] arr) {
-        int[] answer = {};
-        return answer;
+    public static int[] solution(int[] arr) {
+        int[] answer = {-1};
+        if (arr.length == 1) {
+            return answer;
+        } else {
+            int smallest = 2147483647;
+            List<Integer> list = new ArrayList<>();
+            for (int i = 0; i < arr.length ; i++) {
+                if (arr[i] < smallest) smallest = arr[i];
+            }
+
+            for (int i = 0; i < arr.length;i++) {
+                if (smallest !=arr[i]) list.add(arr[i]);
+            }
+
+            return list.stream().mapToInt(i->i).toArray();
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] temp = {4,1,3,2};
+        System.out.println(solution(temp));
     }
 }
