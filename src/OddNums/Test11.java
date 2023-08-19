@@ -8,10 +8,17 @@ public class Test11 {
     // x를 복사한 변수 temp 로 , temp % 10 으로 일의 자릴수를 구하고 , temp * 0.1 곱해
     // temp가 1 보다 작으면 반복문을 깨고
     // x % temp 가 나머지가 있는지 확인해주세요.
-    public boolean solution(int x) {
-        boolean answer = true;
+    static boolean solution(int x) {
+        int temp = 0;
+        String strX = String.valueOf(x);
+        for (int i = 0; i < strX.length(); i++) {
+            temp += strX.charAt(i) - '0';
+        }
+        if (x%temp == 0) return true;
+        else return false;
+    }
 
-
-        return answer;
+    public static void main(String[] args) {
+        System.out.println(solution(13));
     }
 }

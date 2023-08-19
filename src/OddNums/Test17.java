@@ -9,8 +9,14 @@ public class Test17 {
     //char배열로 바꾼다음 뒷자리 4개만 숫자로 변환해 저장해두고
     //번호 - 4 만큼 *로 더하고 뒷자리를 더해 리턴해주세요.
     //*을 더할때 .repeat(n-4) 쓰면 될꺼 같아요.
-    public String solution(String phone_number) {
+    public static String solution(String phone_number) {
         String answer = "";
+        String lastFour = phone_number.substring(phone_number.length()-4);
+        answer = "*".repeat(phone_number.length()-4) + lastFour;
         return answer;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(solution("027778888"));
     }
 }
