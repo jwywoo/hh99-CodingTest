@@ -33,6 +33,7 @@ public class Test18 {
         return answer;
     }
     // 차라리 NumHashMap 과 numbers 중복되는것만 삭제하면 더좋을거 같아요. 그렇게 좋은방법은 아니지만요.
+    // 다른분은 아에 다 더한값 45에 빼버리네요.
     public static void main(String[] args) {
         System.out.println(solution(new int[] {1,2,3,4,5}));
     }
