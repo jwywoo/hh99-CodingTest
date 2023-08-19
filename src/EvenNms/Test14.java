@@ -6,14 +6,26 @@ package EvenNms;
 //seoul의 원소는 길이 1 이상, 20 이하인 문자열입니다.
 //"Kim"은 반드시 seoul 안에 포함되어 있습니다.
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 // 1. for 문을 돌면서 equals를 이용해 Kim의 Index를 찾는다.
 // 2. answer에 직접 "김서방은 " + (index)+ "에 있다" 추가한다.
 public class Test14 {
     static String solution(String[] seoul) {
-        String answer = "";
-        return answer;
-    }
+        int index = -1;
+        for (int i = 0; i < seoul.length; i++)
+        {
+            if (seoul[i].equals("Kim"))
+            {
+                index = i;
+                break;
+            }
+        }
 
+        return "김서방은 " + (index)+ "에 있다";
+    }
+    // 다른분은 Arrays.asList(seoul).indexOf("Kim"); 이라 쓰셨어요.
     public static void main(String[] args) {
 
     }
