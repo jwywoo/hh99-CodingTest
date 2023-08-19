@@ -9,11 +9,34 @@ package EvenNms;
 //      홀수의 경욱 beginIndex는 길이의 절반 endIndex 길이의 절반 더하기 1
 public class Test20 {
     static String solution(String s) {
-        String answer = "";
-        return answer;
+
+        int Bindex = -1;
+        int Eindex = -1;
+        String res = "";
+
+        if (s.length() % 2 == 0)
+        {
+            //Bindex = (s.length() / 2) - 1;
+            //Eindex = (s.length() / 2) + 1;//  Bindex : 1 , Eindex : 3 이라서 wr 떠요
+
+            Bindex = (s.length() / 2) - 1;
+            Eindex = (s.length() / 2);
+
+            res += String.valueOf(s.charAt(Bindex)) + String.valueOf(s.charAt(Eindex));
+
+        }else
+        {
+            Bindex = (s.length() / 2);
+            Eindex = (s.length() / 2) + 1;//
+
+            res += String.valueOf(s.charAt(Bindex));
+        }
+
+        return  res;
     }
-
+    
     public static void main(String[] args) {
-
+        ;
+        System.out.println(solution("qwer"));
     }
 }

@@ -12,8 +12,15 @@ package EvenNms;
 // 2. sign이 참이면 그대로 answer에 추가하고 거짓이면 -1을 곱한체 추가한다.
 public class Test16 {
     static int solution(int[] absolutes, boolean[] signs) {
-        int answer = 123456789;
-        return answer;
+        //absolutes.length == signs.length 일때
+
+        int sum = 0;
+        for (int i = 0; i < signs.length; i++)
+        {
+            sum += absolutes[i] * (signs[i] ? 1 : -1);
+        }
+
+        return  sum;
     }
 
     public static void main(String[] args) {

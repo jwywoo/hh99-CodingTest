@@ -12,10 +12,21 @@ package EvenNms;
 // 2. 그다음 for문을 이용해 a 부터 b(포함)까지 answer에 추가한다.
 public class Test12 {
     static long solution(int a, int b) {
-        long answer = 0;
-        return answer;
-    }
+        long res = 0;
 
+        if (a < b)
+        {
+            for (; a <= b; a++)
+                res += a;
+        }else
+        {
+            for (; b <= a; b++)
+                res += b;
+        }
+
+        return res;
+    }
+    // 다른분은  비교후 (b - a + 1) * (a + b) / 2; 해버리네요.
     public static void main(String[] args) {
 
     }
