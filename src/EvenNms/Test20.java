@@ -12,31 +12,23 @@ public class Test20 {
 
         int Bindex = -1;
         int Eindex = -1;
-        String res = "";
 
         if (s.length() % 2 == 0)
         {
-            //Bindex = (s.length() / 2) - 1;
-            //Eindex = (s.length() / 2) + 1;//  Bindex : 1 , Eindex : 3 이라서 wr 떠요
-
             Bindex = (s.length() / 2) - 1;
-            Eindex = (s.length() / 2);
-
-            res += String.valueOf(s.charAt(Bindex)) + String.valueOf(s.charAt(Eindex));
-
+            Eindex = (s.length() / 2) + 1;
         }else
         {
             Bindex = (s.length() / 2);
             Eindex = (s.length() / 2) + 1;//
 
-            res += String.valueOf(s.charAt(Bindex));
         }
 
-        return  res;
+        return  s.substring(Bindex, Eindex);
     }
-    
+
     public static void main(String[] args) {
         ;
-        System.out.println(solution("qwer"));
+        System.out.println(solution("qwera"));
     }
 }
