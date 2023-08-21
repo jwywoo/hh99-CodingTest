@@ -15,6 +15,11 @@ package EvenNms;
 //commands의 길이는 1 이상 50 이하입니다.
 //commands의 각 원소는 길이가 3입니다.
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.IntStream;
+
 // 1. commands.length 에 맞춰 순회를 시작한다.
 // 2. 문제에서 언급한 i, j, k의 변수를 만들어 값을 저장한다.(조건 조심!)
 // 3. List를 만들어 i에서 j까지의 값을 넣고 (순회를 사용해도 좋고 stream을 사용해도 좋습니다!)
@@ -22,11 +27,27 @@ package EvenNms;
 // 5. k에 해당하는 값을 answer에 대입한다.
 public class Test38 {
     public static int[] solution(int[] array, int[][] commands) {
-        int[] answer = {};
+        int[] answer = new int[commands.length];
+
+        int cnt = 0;
+        for(int[] num : commands) {
+            int i = num[0];
+            int j = num[1];
+            int k = num[2];
+
+            List<Integer> list = new ArrayList<>();
+            IntStream.rangeClosed(i-1, j-1).forEach(x -> {list.add(array[x]);});
+            Collections.sort(list);
+            answer[cnt++] = list.get(k-1);
+        }
+
         return answer;
     }
 
     public static void main(String[] args) {
+        int[] array = {1, 5, 2, 6, 3, 7, 4};
+        int[][] commands = {{2, 5, 3 }, {4, 4, 1}, {1, 7, 3}};// [5, 6, 3]
 
+        System.out.println(solution(array, commands));
     }
 }
