@@ -1,9 +1,10 @@
 package OddNums;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Test37 {
     public static String[] solution(String[] strings, int n) {
-        String[] answer = {};
-
         // answer 배열 문자열 배열의 크기로 초기화
         // LinkedHashMap을 이용해서 key값으로 문자열, value값으로 문자로 하여 나중에 value값으로 정렬을 하기위해 선언한다.
         // 먼저 사전순으로 정렬하기 위해 문자열배열을 오름차순 정렬해준다.
@@ -13,8 +14,16 @@ public class Test37 {
         // 정렬이 끝난 LinkedHashMap의 value값을 for-each를 이용해 answer에 넣어준다.
 
         // 시작
-
-        return answer;
+        Arrays.sort(strings, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if (o1.charAt(n) == o2.charAt(n)) {
+                    return o1.compareTo(o2);
+                }
+                return o1.charAt(n) - o2.charAt(n);
+            }
+        });
+        return strings;
     }
     public static void main(String[] args) {
         String[] strings = {"sun", "bed", "car"}; int n = 1; // ["car", "bed", "sun"]

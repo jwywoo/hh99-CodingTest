@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.TreeMap;
+
 //네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다.
 //
 //다음은 숫자의 일부 자릿수를 영단어로 바꾸는 예시입니다.
@@ -13,14 +14,14 @@ import java.util.TreeMap;
 public class Test36 {
 
     public static String[] valueReturn(Map<String, String[]> map, String s, String letter, int index) {
-        String[] result = {"",""};
+        String[] result = {"", ""};
         String[] numStr = map.get(letter);
-        for (int i = 0; i < numStr.length;i++) {
+        for (int i = 0; i < numStr.length; i++) {
             String curWord = numStr[i];
-            if (s.substring(index, curWord.length()+index).equals(curWord)) {
+            if (s.substring(index, curWord.length() + index).equals(curWord)) {
                 result[0] = curWord;
                 // length
-                result[1] = "" + (curWord.length()+index);
+                result[1] = "" + (curWord.length() + index);
                 break;
             }
         }
@@ -70,9 +71,9 @@ public class Test36 {
         String result = "";
         for (int i = 0; i < s.length(); i++) {
             int curValue;
-            String curLetter = s.substring(index,index+1);
+            String curLetter = s.substring(index, index + 1);
             try {
-                // When it's number
+                // When it's curLetternumber
                 curValue = Integer.parseInt(curLetter);
                 result += curLetter;
                 index++;

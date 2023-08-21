@@ -2,10 +2,10 @@ package MarathonJwywoo;
 
 public class Test21 {
     public static String solution(int n) {
-        String answer = "";
+        StringBuilder sb = new StringBuilder();
         for (int i = 1; i <= n; i++) {
-            answer += (i%2==0)?"박":"수";
+            sb.append((i%2==0)?"박":"수");
         }
-        return answer;
+        return sb.toString();
     }
 }

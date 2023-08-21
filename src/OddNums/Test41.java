@@ -1,5 +1,8 @@
 package OddNums;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+
 public class Test41 {
     public static String solution(int[] food) {
         String answer = "";
@@ -10,12 +13,21 @@ public class Test41 {
         // ArrayDeque의 값들을 answer에 추가해준다.
         
         // 시작
-        
-        return answer;
+        ArrayDeque<Integer> foodOrder = new ArrayDeque<>();
+        foodOrder.add(0);
+        for (int i = food.length-1; i > 0; i--) {
+            int curFoodAmount = (food[i]%2==0)?food[i]/2:(int) food[i]/2;
+            for (int j = 0; j < curFoodAmount; j++) {
+                foodOrder.addFirst(i);
+                foodOrder.addLast(i);
+            }
+        }
+
+        return Arrays.toString(foodOrder.toArray()).replace(",","").replace(" ", "").replace("[","").replace("]","");
     }
     public static void main(String[] args) {
-        int[] food = {1, 3, 4, 6}; // "1223330333221"
-//        int[] food = {1, 7, 1, 2}; // "111303111"
+//        int[] food = {1, 3, 4, 6}; // "1223330333221"
+        int[] food = {1, 7, 1, 2}; // "111303111"
 
         System.out.println(solution(food));
     }
