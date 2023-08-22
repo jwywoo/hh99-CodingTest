@@ -10,9 +10,9 @@ public class Test26 {
         boolean answer = false;
         String[] sList = s.split("");
         if (s.length() == 4 || s.length() == 6) {
-            for (int i = 0; i < sList.length; i++) {
+            for (String value : sList) {
                 try {
-                    Integer.parseInt(sList[i]);
+                    Integer.parseInt(value);
                     answer = true;
                 } catch (Exception e) {
                     answer = false;

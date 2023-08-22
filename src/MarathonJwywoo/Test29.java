@@ -7,7 +7,6 @@ public class Test29 {
     public int[] solution(int n, int m) {
         int greatestCommonDivisor = gcd(n,m);
         int leastCommonMultiple = m*n/greatestCommonDivisor;
-        int[] answer = {greatestCommonDivisor, leastCommonMultiple};
-        return answer;
+        return new int[]{greatestCommonDivisor, leastCommonMultiple};
     }
 }

@@ -2,17 +2,17 @@ package MarathonJwywoo;
 
 public class Test30 {
     public static int solution(int n) {
-        int answer = 0;
-        String temp = "";
+        StringBuilder sb = new StringBuilder();
         while (n != 0) {
-            temp += (n%3);
+            sb.append(n % 3);
             n /= 3;
         }
-        for (int i = 0; i < temp.length(); i++) {
-            double power = Math.pow(3, temp.length() - i - 1);
-            answer += power*(temp.charAt(i)-'0');
-        }
-        return answer;
+//        for (int i = 0; i < sb.length(); i++) {
+//            double power = Math.pow(3, sb.length() - i - 1);
+//            answer += power * (sb.charAt(i) - '0');
+//        }
+//        String reversed = new StringBuilder(sb.toString()).reverse().toString();
+        return Integer.parseInt(sb.toString(), 3);
     }
 
     public static void main(String[] args) {

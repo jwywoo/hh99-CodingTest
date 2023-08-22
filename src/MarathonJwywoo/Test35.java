@@ -16,11 +16,11 @@ public class Test35 {
         }
     }
     public static String solution(String s, int n) {
-        String answer = "";
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            answer += converter(s.charAt(i), n);
+            sb.append(converter(s.charAt(i), n));
         }
-        return answer;
+        return sb.toString();
     }
 
     public static void main(String[] args) {
