@@ -23,7 +23,6 @@ public class Test31 {
 
     public static String solution(String s) {
         StringBuilder sb = new StringBuilder();
-        String answer = "";
         int index = 0;
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == ' ') {
