@@ -1,12 +1,12 @@
+package EvenNumSol;
+
 import java.util.Map;
 import java.util.TreeMap;
 
 //네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다.
 //
 //다음은 숫자의 일부 자릿수를 영단어로 바꾸는 예시입니다.
-//
 //1478 → "one4seveneight"
-//234567 → "23four5six7"
 //10203 → "1zerotwozero3"
 //이렇게 숫자의 일부 자릿수가 영단어로 바뀌어졌거나, 혹은 바뀌지 않고 그대로인 문자열 s가 매개변수로 주어집니다. s가 의미하는 원래 숫자를 return 하도록 solution 함수를 완성해주세요.
 //
@@ -16,12 +16,11 @@ public class Test36 {
     public static String[] valueReturn(Map<String, String[]> map, String s, String letter, int index) {
         String[] result = {"", ""};
         String[] numStr = map.get(letter);
-        for (int i = 0; i < numStr.length; i++) {
-            String curWord = numStr[i];
-            if (s.substring(index, curWord.length() + index).equals(curWord)) {
+        for (String curWord : numStr) {
+            if (s.startsWith(curWord, index)) {
                 result[0] = curWord;
                 // length
-                result[1] = "" + (curWord.length() + index);
+                result[1] = String.valueOf(curWord.length() + index);
                 break;
             }
         }
@@ -29,7 +28,6 @@ public class Test36 {
     }
 
     public static int solution(String s) {
-        int answer = 0;
         // TreeMap
         Map<String, String> mapValue = new TreeMap<>();
         mapValue.put("zero", "0");
@@ -68,29 +66,28 @@ public class Test36 {
         mapAlpha.put("n", temp5);
 
         int index = 0;
-        String result = "";
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            int curValue;
+
             String curLetter = s.substring(index, index + 1);
             try {
                 // When it's curLetternumber
-                curValue = Integer.parseInt(curLetter);
-                result += curLetter;
+                Integer.parseInt(curLetter);
+                sb.append(curLetter);
                 index++;
             } catch (Exception e) {
                 // When it's not a number
                 String[] tempResult = valueReturn(mapAlpha, s, curLetter, index);
                 index = Integer.parseInt(tempResult[1]);
-                result += mapValue.get(tempResult[0]);
+                sb.append(mapValue.get(tempResult[0]));
             }
             if (index == s.length()) break;
         }
-        System.out.println(result);
-        return answer;
+        return Integer.parseInt(sb.toString());
     }
 
     public static void main(String[] args) {
-        solution("23four5six7");
+        System.out.println(solution("23four5six7"));
         solution("2three45sixseven");
         solution("123");
     }

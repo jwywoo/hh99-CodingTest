@@ -6,9 +6,9 @@ public class Test34 {
     public static int solution(int[][] sizes) {
         int finalMax = 0;
         int finalMin = 0;
-        for (int i = 0; i < sizes.length; i++) {
-            int maxVal = Math.max(sizes[i][0], sizes[i][1]);
-            int minVal = Math.max(sizes[i][0], sizes[i][1]);
+        for (int[] size : sizes) {
+            int maxVal = Math.max(size[0], size[1]);
+            int minVal = Math.max(size[0], size[1]);
             finalMax = Math.max(maxVal, finalMax);
             finalMin = Math.max(minVal, finalMin);
         }
