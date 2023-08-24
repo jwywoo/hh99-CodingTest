@@ -2,6 +2,7 @@ package OddNums;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class Test41 {
     public static String solution(int[] food) {
@@ -20,7 +21,13 @@ public class Test41 {
                 foodOrder.addLast(i);
             }
         }
-
+        StringBuilder builder = new StringBuilder();
+        Iterator iter = foodOrder.iterator();
+        while (iter.hasNext()) {
+            builder.append(iter.next());
+        }
+        System.out.println(builder.toString());
+        // int[] -> [1,2,3] toString -> "[1,2,3]" .replace "," ""
         return Arrays.toString(foodOrder.toArray()).replace(",","").replace(" ", "").replace("[","").replace("]","");
     }
     public static void main(String[] args) {

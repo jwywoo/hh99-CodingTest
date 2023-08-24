@@ -41,6 +41,6 @@ public class Test40 {
     }
 
     public static void main(String[] args) {
-        solution("aaaaaaa");
+        solution("banana");
     }
 }
